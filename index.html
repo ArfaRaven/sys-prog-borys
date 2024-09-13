@@ -3,25 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waiting for Loading</title>
+    <title>Системне Програмування — Контроль версій</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Times New Roman', serif;
+            background-color: #121212;
+            color: #e0e0e0;
             margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            padding: 0;
         }
-
-        h1 {
-            font-size: 3rem;
-            color: #333;
+        header {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            border-bottom: 2px solid #00c8c8;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+        .section-title {
+            color: #00c8c8;
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #00c8c8;
+            padding-bottom: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .section-content {
+            margin-bottom: 25px;
+        }
+        .code-box {
+            background-color: #2d2d2d;
+            color: #c0c0c0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #444;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        .copy-btn {
+            background-color: #00c8c8;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .copy-btn:hover {
+            background-color: #00a6a6;
+        }
+        .circle-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .circle-item {
+            background-color: #00c8c8;
+            color: #1e1e1e;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .circle-item:hover {
+            background-color: #00a6a6;
+        }
+        .sources {
+            background-color: #2d2d2d;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        .sources a {
+            color: #00c8c8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sources a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #1f1f1f;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>Waiting for loading...</h1>
+
+<header>СИСТЕМНЕ ПРОГРАМУВАННЯ</header>
+
+<div class="container">
+    <section>
+        <h2 class="section-title">Що таке Git?</h2>
+        <div class="section-content">
+            <p>Git — це розподілена система контролю версій, яка дозволяє працювати з різними версіями проекту, легко відстежувати зміни та співпрацювати над проектами в команді.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Основні можливості Git</h2>
+        <div class="section-content">
+            <p>Ось кілька основних можливостей Git, представлених у вигляді кружечків:</p>
+            <div class="circle-list">
+                <div class="circle-item">Розподілена<br>структура</div>
+                <div class="circle-item">Безпека<br>даних</div>
+                <div class="circle-item">Історія<br>змін</div>
+                <div class="circle-item">Гілки<br>та злиття</div>
+                <div class="circle-item">Командна<br>робота</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Базові команди Git</h2>
+        <div class="section-content">
+            <p>Нижче наведені найважливіші команди Git для початку роботи:</p>
+
+            <div class="code-box">
+                <span>git init</span>
+                <button class="copy-btn" onclick="copyToClipboard('git init')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git clone &lt;url&gt;</span>
+                <button class="copy-btn" onclick="copyToClipboard('git clone &lt;url&gt;')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git add &lt;file&gt;</span>
+                <button class="copy-btn" onclick="copyToClipboard('git add &lt;file&gt;')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git commit -m "опис змін"</span>
+                <button class="copy-btn" onclick="copyToClipboard('git commit -m "опис змін"')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git status</span>
+                <button class="copy-btn" onclick="copyToClipboard('git status')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git branch</span>
+                <button class="copy-btn" onclick="copyToClipboard('git branch')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git checkout &lt;branch&gt;</span>
+                <button class="copy-btn" onclick="copyToClipboard('git checkout &lt;branch&gt;')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git merge &lt;branch&gt;</span>
+                <button class="copy-btn" onclick="copyToClipboard('git merge &lt;branch&gt;')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git pull</span>
+                <button class="copy-btn" onclick="copyToClipboard('git pull')">Скопіювати</button>
+            </div>
+
+            <div class="code-box">
+                <span>git push</span>
+                <button class="copy-btn" onclick="copyToClipboard('git push')">Скопіювати</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Джерела інформації</h2>
+        <div class="sources">
+            <p>Ось кілька корисних джерел для вивчення Git:</p>
+            <ul>
+                <li><a href="https://git-scm.com/doc" target="_blank">Git Documentation</a></li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<footer>
+    &copy; 2024 Системне Програмування
+</footer>
+
+<script>
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Скопійовано: ' + text);
+    }
+</script>
+
 </body>
 </html>
